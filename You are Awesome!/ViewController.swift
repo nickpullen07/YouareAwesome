@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     var index = 0
 
     
-    
-    //Code below executes when the app's view below first loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +30,20 @@ class ViewController: UIViewController {
                         "You are tremendous!",
                         "You've got the design skills of Jonny Ive!",
                         "I can't wait to download you app!"]
-        messageLabel.text = messages.randomElement()!
+        var newIndex = -1
+        
+        repeat {
+            newIndex = Int.random(in: 0..<messages.count)
+        } while index == newIndex
+        
+        index = newIndex
+        messageLabel.text = messages[index]
+        
+
         
         
+        
+//        messageLabel.text = messages.randomElement()!
         
         
         
